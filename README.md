@@ -7,9 +7,10 @@ occurrences across all files.
 1. Clone this repository.
 2. from a console cd into repository directory.
 3. run Maven install
-4. run Maven exec:java
+4. run Maven exec:java -Dexec.args="5 README.md"
 
 ```
 mvn clean install
 mvn test
+mvn exec:java -Dexec.args="5 README.md"
 ```

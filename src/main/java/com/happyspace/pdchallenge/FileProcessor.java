@@ -128,7 +128,7 @@ public class FileProcessor {
             }
         }
 
-        exec.isShutdown();
+        exec.shutdown();
 
         results.addAll(counts.entrySet());
         Collections.sort(results, new EntryComparator());

@@ -60,8 +60,8 @@ public class App
         ArrayList<String> s_paths = new ArrayList<>(Arrays.asList(p));
         ArrayList<Path> paths = new ArrayList<>();
 
-        // the path must point to an existing file or directory.
-        // Note that File.exists() checks for readability.
+        // the paths must point to an existing file or directory.
+        // Note that Files.exists() checks for readability.
         // File.exists() throws a SecurityException which is a runtime exception.
 
         // work around a very strange bug with jUnit and 'System Rules' trapping the exit
@@ -102,7 +102,12 @@ public class App
             // process files
             List<Map.Entry<String, Integer>> entries = processor.processFiles();
             // print results
-            System.out.format(Messages.WORDS_HEADER_FORMAT, maxWords);
+            int mw = maxWords;
+            if(entries.size() < mw) {
+                mw = entries.size();
+            }
+
+            System.out.format(Messages.WORDS_HEADER_FORMAT, mw);
             for (Map.Entry<String, Integer> entry: entries){
                 System.out.format(Messages.WORDS_ITEM_FORMAT,entry.getKey(), entry.getValue());
             }

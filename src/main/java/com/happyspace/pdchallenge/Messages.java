@@ -7,7 +7,7 @@ package com.happyspace.pdchallenge;
 public class Messages {
     // invalid number of arguments
     protected static String INVALID_ARGUMENTS = "Incorrect number of options. \n" +
-            "Expected two arguments, maximum number of words and a path. \n" +
+            "Expected at least two arguments, maximum number of words and a list of paths. \n" +
             "Usage: 5 /tmp /home/user/file.txt";
 
     // max words messages
@@ -26,7 +26,7 @@ public class Messages {
     protected static String WORDS_HEADER_FORMAT = "Top %d words: \n";
 
     // formatted method
-    protected static String WORDS_ITEM_FORMAT = "word %s occurred %d times \n";
+    protected static String WORDS_ITEM_FORMAT = "word '%s' occurred %d times \n";
 
     // general error message
     protected static String EXECUTION_FAILED = "Unexpected error: program encountered and unexpected problem.";

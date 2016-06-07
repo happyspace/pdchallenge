@@ -46,6 +46,7 @@ public class FileProcessorTest {
     }
 
     /**
+     * Test one file.
      * Light testing of file transversal since this
      * should be well tested as part of the nio package.
      */
@@ -63,6 +64,11 @@ public class FileProcessorTest {
         assertEquals(fileProcessor.paths.size(), 1);
     }
 
+    /**
+     * Test three files.
+     * Light testing of file transversal since this
+     * should be well tested as part of the nio package.
+     */
     @Test
     public void testCreateFileListThree() throws IOException {
         Path path = Paths.get("src/test/resources/three_files");
@@ -77,6 +83,14 @@ public class FileProcessorTest {
         assertEquals(fileProcessor.paths.size(), 3);
     }
 
+    /**
+     * Test count number words in a single file.
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws FailedToCreateFileList
+     */
     @Test
     public void testSingleFileWords()
             throws IOException, InterruptedException, ExecutionException, FailedToCreateFileList {
@@ -91,6 +105,14 @@ public class FileProcessorTest {
         assertEquals(entries.size(), 10);
     }
 
+    /**
+     * Test small top N.
+     *
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws FailedToCreateFileList
+     * @throws IOException
+     */
     @Test
     public void testSingleFileTopTwo()
             throws InterruptedException, ExecutionException, FailedToCreateFileList, IOException {
@@ -106,6 +128,14 @@ public class FileProcessorTest {
         assertEquals(entries.size(), 2);
     }
 
+    /**
+     * Test three identical files of number words.
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws FailedToCreateFileList
+     */
     @Test
     public void testMultipleFileWords()
             throws IOException, InterruptedException, ExecutionException, FailedToCreateFileList {
@@ -119,6 +149,15 @@ public class FileProcessorTest {
         assertEquals(entries.get(0).getValue().longValue(), 30L);
     }
 
+    /**
+     * Test a file containing number words
+     * with each number repeated that number of times.
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws FailedToCreateFileList
+     */
     @Test
     public void testAscendingNumberWords()
             throws IOException, InterruptedException, ExecutionException, FailedToCreateFileList {
@@ -132,6 +171,15 @@ public class FileProcessorTest {
         assertEquals(entries.get(0).getValue().longValue(), 10L);
     }
 
+    /**
+     * Test processing a directory of files each containing
+     * a number. The count of words in the file matches the number.
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     * @throws ExecutionException
+     * @throws FailedToCreateFileList
+     */
     @Test
     public void testAscendingNumberFiles()
             throws IOException, InterruptedException, ExecutionException, FailedToCreateFileList {

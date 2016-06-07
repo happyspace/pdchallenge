@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
 
 
@@ -123,6 +122,10 @@ public class AppTest
         App.main(new String[]{Integer.toString(AppTest.TOP_N), "/moo/moo/moo"});
     }
 
+
+    /**
+     * Test reading a single file.
+     */
     @Test
     public void testSingleFileWordsOutput(){
         systemOutRule.clearLog();
@@ -135,6 +138,9 @@ public class AppTest
         assertEquals(substring, format.substring(0,header));
     }
 
+    /**
+     * Test reading a file and a directory.
+     */
     @Test
     public void testDirectoryAndFileInput(){
         systemOutRule.clearLog();
@@ -148,12 +154,4 @@ public class AppTest
         assertNotEquals(index, "-1");
     }
 
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }

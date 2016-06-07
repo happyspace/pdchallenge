@@ -30,9 +30,7 @@ public class App
     protected static final int MAX_FILE_WALK = 99;
     // regex
     protected static final String WHITE_SPACE_REGEX = "\\s+";
-
-    // create c launcher as to enable testability
-    // of program arguments.
+    
     public static void main( String[] args )
     {
         // for simplicity there must be at least two arguments
